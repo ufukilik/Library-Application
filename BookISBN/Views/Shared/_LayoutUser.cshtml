@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@ViewBag.Title</title>
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<div class="container body-content">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="/User/KitapArama">Kitap Arama</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/User/KitapAlma">Kitap Alma</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/User/KitapVerme">Kitap Verme</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+
+	<div class="container body-content">
+		@RenderBody()
+	</div>
+
+	@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/bootstrap")
+	@RenderSection("scripts", required: false)
+</body>
+</html>

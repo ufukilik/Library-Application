@@ -1,0 +1,28 @@
+﻿@model List<BookISBN.Models.KullanıcıKitapModel>
+@{
+	ViewBag.Title = "KullaniciListeleme";
+	Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<table class="table table-hover mt-2">
+	<tr class="text-center">
+		<th>Kullanıcı Adı</th>
+		<th>Kitap Adı</th>
+		<th>ISBN</th>
+		<th>Alış Tarihi</th>
+		<th>En Son Teslim Tarihi</th>
+	</tr>
+	@foreach (var role in Model)
+	{
+	<tr class="text-center">
+		<td>@Html.DisplayFor(modelItem => role.UserName)</td>
+		<td>@Html.DisplayFor(modelItem => role.BookName)</td>
+		<td>@Html.DisplayFor(modelItem => role.ISBN)</td>
+		<td>@Html.DisplayFor(modelItem => role.Reserve)</td>
+		<td>@Html.DisplayFor(modelItem => role.Deliver)</td>
+	</tr>
+	}
+</table>
+
+
+

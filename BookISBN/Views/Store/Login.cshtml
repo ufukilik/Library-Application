@@ -1,0 +1,23 @@
+﻿@{
+	ViewBag.Title = "Giriş Paneli";
+}
+
+<form action="Store/Verify" method="post" class="text-center">
+	<div class="row d-flex justify-content-center p-md-3 form-group">
+		<div class="col-md-4 text-center">
+			<h2>Kullanıcı Adı</h2>
+			<input type="text" name="Name" class="form-control-sm" />
+		</div>
+	</div>
+	<div class="row d-flex justify-content-center p-md-3 form-group">
+		<div class="col-md-4 text-center">
+			<h2>Şifre</h2>
+			<input type="password" name="Password" class="form-control-sm" />
+		</div>
+	</div>
+	<div class="row d-flex justify-content-center p-md-3">
+		<div class="col-md-4 text-center">
+			<input type="submit" value="Giriş" class="btn btn-primary" />
+		</div>
+	</div>
+</form>

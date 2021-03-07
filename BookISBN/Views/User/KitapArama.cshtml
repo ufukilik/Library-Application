@@ -1,0 +1,45 @@
+﻿@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+@*<button type="button" class="btn btn-outline-secondary mt-3 ml-auto mr-auto active" data-toggle="button" aria-pressed="true" id="ad">Kitap adına göre ara</button>
+	<button type="button" class="btn btn-outline-secondary mt-3 active" data-toggle="button" aria-pressed="true" id="ISBN">ISBN numarasında göre ara</button>*@
+
+<form action="Search" method="post" enctype="multipart/form-data">
+
+	<div class="input-group mt-3 form-group" id="adagore">
+		<div class="input-group-prepend">
+			<span class="input-group-text" id="basic-addon1">Kitabın adı</span>
+		</div>
+		<input type="text" class="form-control" name="BookName">
+	</div>
+
+	<div class="input-group mt-3 form-group" id="ISBNgore">
+		<div class="custom-file">
+			<input type="file" class="custom-file-input form-control" name="File" id="inputGroupFile01">
+			<label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+		</div>
+	</div>
+
+	<button class="btn btn-outline-secondary" type="submit" id="button-addon1">Kitap Ara</button>
+</form>
+
+
+
+
+<script>
+	document.querySelector('.custom-file-input').addEventListener('change', function (e) {
+		var fileName = document.getElementById("inputGroupFile01").files[0].name;
+		var nextSibling = e.target.nextElementSibling
+		nextSibling.innerText = fileName
+	})
+	//$(document).ready(function () {
+	//	$("button#ad").click(function () {
+	//		$("form div#ISBNgore").toggle();
+	//	});
+	//	$("button#ISBN").click(function () {
+	//		$("form div#adagore").toggle();
+	//	});
+	//});
+</script>

@@ -1,0 +1,33 @@
+﻿@model BookISBN.Models.Image
+@{
+    ViewBag.Title = "Kitap Ekle";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<form action="Add" method="post" enctype="multipart/form-data">
+	<div class="input-group mb-3 mt-3 form-group">
+		<div class="input-group-prepend">
+			<span class="input-group-text" id="basic-addon1">Kitabın adı</span>
+		</div>
+		<input type="text" class="form-control" name="BookName">
+	</div>
+
+	<div class="input-group mb-3 form-group">
+		<div class="custom-file">
+			<input type="file" class="custom-file-input form-control" name="File" id="inputGroupFile01">
+			<label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+		</div>
+	</div>
+
+	<button class="btn btn-outline-secondary" type="submit" id="button-addon1">Kitabı Ekle</button>
+</form>
+
+
+<script>
+	document.querySelector('.custom-file-input').addEventListener('change', function (e) {
+		var fileName = document.getElementById("inputGroupFile01").files[0].name;
+		var nextSibling = e.target.nextElementSibling
+		nextSibling.innerText = fileName
+	})
+</script>

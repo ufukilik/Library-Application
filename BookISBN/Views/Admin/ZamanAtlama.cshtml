@@ -1,0 +1,16 @@
+﻿@model BookISBN.Models.Zaman
+@{
+	ViewBag.Title = "ZamanAtlama";
+	Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<form action="Time" method="post" enctype="multipart/form-data">
+	<div class="input-group mb-3 mt-3 form-group">
+		<div class="input-group-prepend">
+			<span class="input-group-text" id="basic-addon1">Zaman Atla(Gün)</span>
+		</div>
+		<input type="text" class="form-control" name="Gun">
+	</div>
+
+	<button class="btn btn-outline-secondary" type="submit" id="button-addon1">Zaman Atla</button>
+</form>

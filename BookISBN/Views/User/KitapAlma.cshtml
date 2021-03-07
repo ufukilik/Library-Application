@@ -1,0 +1,28 @@
+﻿@model List<BookISBN.Models.Book>
+@{
+	ViewBag.Title = "KitapAlma";
+	Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<table class="table table-hover mt-2">
+	<tr class="text-center">
+		<th>Kitap Adı</th>
+		<th>ISBN</th>
+		<th>Al</th>
+	</tr>
+	@foreach (var item in Model)
+	{
+	<tr class="text-center">
+		<td>@Html.DisplayFor(modelItem => item.Name)</td>
+		<td>@Html.DisplayFor(modelItem => item.ISBN)</td>
+		@if (item.wasBought == false)
+		{
+			<td>@Html.ActionLink("Bought", "Bought", new { id = item.Id }, new { @class = "btn btn-outline-secondary m-3 d-inline" })</td>
+		}
+		else
+		{
+			<td>@Html.ActionLink("Bought", "Bought", new { id = item.Id }, new { @class = "btn btn-outline-secondary m-3 sr-only sr-only-focusable d-inline" })</td>
+		}
+	</tr>
+	}
+</table>

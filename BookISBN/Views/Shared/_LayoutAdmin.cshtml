@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@ViewBag.Title</title>
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+	<div class="container body-content">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="/Admin/KitapEkle">Kitap Ekle</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/Admin/ZamanAtlama">Zaman Atlama</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/Admin/KullaniciListeleme">Kullanıcı Listeleme</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+
+	<div class="container body-content">
+		@RenderBody()
+	</div>
+
+	@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/bootstrap")
+	@RenderSection("scripts", required: false)
+</body>
+</html>
